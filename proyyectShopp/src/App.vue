@@ -67,8 +67,9 @@ function suma(cantidad,precio){
       
     </div>
     <div class="total">
-      <div class="contentTotal"> {{ total }} </div>
       <div class="contentTotal"> {{ totalCantidad }} </div>
+
+      <div class="contentTotal"> {{ total }} </div>
     </div>
   </div>
   </div>
