@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from 'vue';
 
-let newTask = ref('')
 let total = 0
 let totalCantidad = 0
 
@@ -10,7 +8,7 @@ let listProduct = [
     name : 'Yuca',
     cantidad : 5,
     precio : 2000,
-    fechaVencimiento : 4,
+    fechaVencimiento : 6,
   },
   {
   name : 'Platano',
@@ -36,14 +34,17 @@ function suma(cantidad,precio){
 <template>
 <div class="container">
   <h1 class="title">Tienda Romero</h1>
-  <p class="products">{{ newTask }}</p>
   <h2 class="subtitle">Lista de Prodcutos</h2>
 
   <div class="task" >
     <div class="content">
       <div class="name">Nombre producto</div>
-      <div class="canpre"><span class="contentCanpre">Cantidad</span><span class="contentCanpre">Precio</span></div>
+      <div class="canpre">
+        <span class="contentCanpre">Cantidad</span>
+        <span class="contentCanpre">Precio</span>
+      </div>
     </div>
+
     <span  v-for="(objeto,index) in listProduct" :key="index" >
       <span class="linea" v-if="!(objeto.cantidad == 0 || objeto.fechaVencimiento == 0)" >
         <div class="nameProduct"> 
@@ -182,10 +183,4 @@ h1{
   margin-top: 12px;
 }
 
-.products{
-  font-size: 10px;
-  margin: 0;
-  text-align: center;
-  opacity: 0.6;
-}
 </style>
